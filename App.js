@@ -1,18 +1,59 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, Button, TouchableOpacity, DrawerLayoutAndroid } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import HeaderlessScreen from './screens/HeaderlessScreen';
 
+// const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
+
+// function HomeScreen({navigation}) {
+//   return(
+//     <View>
+//       <Text>Home</Text>
+//       <Button title="Drawer 열기" onPress={()=>navigation.openDrawer()} />
+//       <Button
+//         title="Setting 열기"
+//         onPress={()=>navigation.navigate('Setting')}
+//       />
+//     </View>
+//   );
+// }
+
+// function SettingScreen({navigation}) {
+//   return(
+//     <View>
+//       <Text>Setting</Text>
+//       <Button title="뒤로가기" onPress={()=>navigation.goBack()} />
+//     </View>
+//   );
+// }
 
 function App () {
 
   return (
     <NavigationContainer>
+      {/* <Drawer.Navigator
+        initialRouteName="Home"
+        drawerPosition="left"
+        backBehavior="history"
+      >
+        <Drawer.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{title:'홈'}}
+        />
+        <Drawer.Screen 
+          name="Setting" 
+          component={SettingScreen}
+          options={{title:'설정'}}
+        />
+      </Drawer.Navigator> */}
+
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen 
           name="Home" 
@@ -63,6 +104,7 @@ function App () {
         />
       </Stack.Navigator>
     </NavigationContainer>
-  )}
+  );
+}
 
 export default App;
