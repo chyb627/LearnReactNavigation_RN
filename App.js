@@ -8,6 +8,8 @@ import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import HeaderlessScreen from './screens/HeaderlessScreen';
 
+import './App.css';
+
 // const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
